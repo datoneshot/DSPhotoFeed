@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+use_frameworks!
+
+target 'FBCollectionViewExample' do
+    pod 'SDWebImage'
+    pod 'TTTAttributedLabel'
+    pod 'MWPhotoBrowser'
+    pod 'URBMediaFocusViewController'
+    pod 'DZNEmptyDataSet', '1.7.3'
+end

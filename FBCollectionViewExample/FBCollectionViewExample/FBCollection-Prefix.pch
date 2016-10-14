@@ -1,0 +1,21 @@
+//
+//  FBCollection-Prefix.pch
+//  FBCollectionViewExample
+//
+//  Created by Ruthwick S Rai on 13/10/16.
+//  Copyright © 2016 Ruthwick S Rai. All rights reserved.
+//
+
+#ifndef FBCollection_Prefix_pch
+#define FBCollection_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIColor+Hexadecimal.h"
+#import "NSDictionary+NotNull.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "FBCollectionViewUtilityManager.h"
+#import "FTToastIndicator.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#endif /* FBCollection_Prefix_pch */
