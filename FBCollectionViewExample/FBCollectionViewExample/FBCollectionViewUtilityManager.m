@@ -192,30 +192,7 @@
     }
     return string;
 }
-+(NSString *)stripEmptyTags:(NSString *)neutralisedString{
-    NSString *string = [self neutraliseString:neutralisedString];
-    string = [string stringByReplacingOccurrencesOfString:@"<p><br></p>" withString:@""];
-    string = [string stringByReplacingOccurrencesOfString:@"<p></p>" withString:@""];
-    string = [string stringByReplacingOccurrencesOfString:@"<p><em></em></p>" withString:@""];
-    string = [string stringByReplacingOccurrencesOfString:@"<p><strong></strong></p>" withString:@""];
-    string = [string stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
-    return string;
-}
-+(NSAttributedString *)UserDescription:(NSString *)string
-{
-    string = [self neutraliseString:string];
-    NSLog(@"height is  And string: %@",string);
-    if (string.length == 0) {
-        NSAttributedString * userDescription =[[NSMutableAttributedString alloc] initWithString:@""];
-        return userDescription;
-    }
-    UIFont *font = [UIFont fontWithName:USERDESCRIPTION_FONT_NAME size:USERDESCRIPTION_FONT_SIZE];
-    string = [string stringByAppendingString:[NSString stringWithFormat:@"<style>body{font-family: '%@'; font-size:%fpx;}</style>",
-                                              font.fontName,
-                                              font.pointSize]];
-    NSAttributedString * userDescription = [[NSAttributedString alloc] initWithData:[string dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    return userDescription;
-}
+
 +(BOOL) validateUrl:(NSString *)candidate {
     candidate = [self neutraliseString:candidate];
     

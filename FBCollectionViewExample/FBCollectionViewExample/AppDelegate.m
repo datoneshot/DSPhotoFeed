@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *viewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"viewController"];
+    self.window.rootViewController = viewcontroller;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

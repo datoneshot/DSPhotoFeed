@@ -11,10 +11,8 @@
 @interface FBCollectionViewUtilityManager : UIViewController
 +(UIColor*)colorWithHexString:(NSString*)hex;
 +(NSString *)neutraliseString:(NSString *)string;
-+(NSAttributedString *)UserDescription:(NSString *)string;
 +(BOOL)stringIsNull:(NSString *)stringCheck;
 +(NSString*)getPostDurationWithDateFormate:(double)longDate;
 +(NSString*)getPostDurationWhenPostedWithLongDate:(double)longDate;
 +(BOOL) validateUrl:(NSString *)candidate;
-+(NSString *)stripEmptyTags:(NSString *)neutralisedString;
 @end

@@ -48,12 +48,5 @@
 @property (nonatomic,strong) NSMutableArray *photos;
 -(void)laodCellContents;
 -(void)loadEmbedPhotos:(NSArray *)mediaList;
-//// **** load discritpions   *******////
--(void)laodUserDescription:(NSAttributedString *)withString;
-
-
-
-
-
 
 @end

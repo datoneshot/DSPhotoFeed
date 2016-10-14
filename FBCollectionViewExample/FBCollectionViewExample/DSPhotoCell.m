@@ -19,6 +19,9 @@
     _profileImage.layer.masksToBounds = YES;
     [_likeButton setImage:[UIImage imageNamed:@"heart_icon_selected"] forState:UIControlStateSelected];
     [_likeButton setImage:[UIImage imageNamed:@"heart_icon"] forState:UIControlStateNormal];
+    _userDescription.delegate = self;
+    _userDescription.enabledTextCheckingTypes = NSTextCheckingTypeLink;
+    _userDescription.linkAttributes =  @{NSForegroundColorAttributeName: [UIColor colorWithRed:0.263 green:0.718 blue:0.478 alpha:1.00],NSUnderlineStyleAttributeName: @(NSUnderlineStyleNone)};
     
    //** setup collectionview **//
     [self.sliderView setDataSource:self];
@@ -122,9 +125,10 @@
 
 #pragma setup cell data
 - (void)laodCellContents {
-    _profileImage.image = [UIImage imageNamed:@"No_profile_image"];
     NSString* profileName = [_embededDetails objectForKey:@"author"];
     NSString* profileUserName = [_embededDetails objectForKey:@"ownerName"];
+    NSString * profilePhoto = [_embededDetails objectForKey:@"photo"];
+    [_profileImage sd_setImageWithURL:[NSURL URLWithString:profilePhoto] placeholderImage:[UIImage imageNamed:@"No_profile_image"] ];
     NSString *dateStamp = [_embededDetails objectForKey:@"modifieddate"];
     NSString *favorited =  [_embededDetails objectForKey:@"favorited"];
     if ([favorited intValue] == 1 || favouriteButtonState == 1) {
@@ -139,9 +143,7 @@
     _profileName.text = [NSString stringWithFormat:@"%@", profileName];
     _profileUserName.text = [NSString stringWithFormat:@"@%@", profileUserName];
     NSString *discription = [NSString stringWithFormat:@"%@",[_embededDetails objectOrNilForKey:@"contenttext"]];
-    discription = [FBCollectionViewUtilityManager stripEmptyTags:discription];
-    NSAttributedString *attr = [FBCollectionViewUtilityManager UserDescription:discription];
-        [self laodUserDescription:attr];
+    _userDescription.text = discription;
 }
 
 #pragma setup what to do when link in user description is clicked
@@ -152,22 +154,9 @@
         safariVC.delegate = self;
         UIViewController *currentTopVC = [self currentTopViewController];
         [currentTopVC presentViewController:safariVC animated:YES completion:nil];
-        
     }
 }
 
-#pragma setup userdescription label property
--(void)laodUserDescription:(NSAttributedString *)withString{
-    _userDescription.delegate = self;
-    _userDescription.enabledTextCheckingTypes = NSTextCheckingTypeLink;
-    _userDescription.linkAttributes =  @{NSForegroundColorAttributeName: [UIColor colorWithRed:0.263 green:0.718 blue:0.478 alpha:1.00],
-                                         NSUnderlineStyleAttributeName: @(NSUnderlineStyleNone)};
-    _userDescription.text = withString;
-    [_userDescription layoutIfNeeded];
-    [_userDescription updateConstraints];
-    [self.contentView updateConstraints];
-    [self.contentView layoutIfNeeded];
-}
 
 -(void)loadEmbedPhotos:(NSArray *)mediaList{
     NSLog(@"here at laodembedphotos: %@",mediaList);
