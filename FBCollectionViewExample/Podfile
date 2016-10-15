@@ -6,6 +6,5 @@ target 'FBCollectionViewExample' do
     pod 'SDWebImage'
     pod 'TTTAttributedLabel'
     pod 'MWPhotoBrowser'
-    pod 'URBMediaFocusViewController'
     pod 'DZNEmptyDataSet', '1.7.3'
 end

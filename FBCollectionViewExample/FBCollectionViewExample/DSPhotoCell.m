@@ -127,7 +127,7 @@
 - (void)laodCellContents {
     NSString* profileName = [_embededDetails objectForKey:@"author"];
     NSString* profileUserName = [_embededDetails objectForKey:@"ownerName"];
-    NSString * profilePhoto = [_embededDetails objectForKey:@"photo"];
+    NSString * profilePhoto = [_embededDetails objectForKey:@"photo"]; 
     [_profileImage sd_setImageWithURL:[NSURL URLWithString:profilePhoto] placeholderImage:[UIImage imageNamed:@"No_profile_image"] ];
     NSString *dateStamp = [_embededDetails objectForKey:@"modifieddate"];
     NSString *favorited =  [_embededDetails objectForKey:@"favorited"];

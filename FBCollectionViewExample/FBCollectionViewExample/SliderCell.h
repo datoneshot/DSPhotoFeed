@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "URBMediaFocusViewController.h"
 
-@interface SliderCell : UICollectionViewCell<URBMediaFocusViewControllerDelegate, NSURLConnectionDataDelegate>
+
+@interface SliderCell : UICollectionViewCell<NSURLConnectionDataDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIView *overLay;
 @property (strong, nonatomic) IBOutlet UILabel *countImage;
-@property (nonatomic, strong) URBMediaFocusViewController *mediaFocusController;
 @property (nonatomic, strong) NSString *imageUrl;
 @end

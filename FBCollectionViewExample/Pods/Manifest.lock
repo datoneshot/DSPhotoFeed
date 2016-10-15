@@ -10,14 +10,12 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - TTTAttributedLabel (2.0.0)
-  - URBMediaFocusViewController (0.9.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (= 1.7.3)
   - MWPhotoBrowser
   - SDWebImage
   - TTTAttributedLabel
-  - URBMediaFocusViewController
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
@@ -26,8 +24,7 @@ SPEC CHECKSUMS:
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  URBMediaFocusViewController: 26779e301fe75ec0152fbe8b476bd06ccee9f9b3
 
-PODFILE CHECKSUM: a7dc2633cd74771275fb714002ad71d49e89bdce
+PODFILE CHECKSUM: d10781f5d6a5ad0b26814253f7f96f336714e647
 
 COCOAPODS: 1.0.1
